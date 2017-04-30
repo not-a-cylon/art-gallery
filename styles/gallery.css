@@ -1,0 +1,439 @@
+html, body{
+	width:100%;
+	overflow-x:hidden;
+}
+
+#gallery-content{
+	position:relative;
+	display:inline-block;
+	width:80%;
+}
+
+.vulgar-text{
+	color:red;
+}
+
+/* Styling for the overlay and pop-up display */
+
+.overlay {
+	z-index:2;
+	display: none;
+    background: black;
+    position: absolute;
+	width:100%;
+	height:100%;
+    top: 0;                  
+    right: 0;                
+    bottom: 0;
+    left: 0;
+    opacity: 0.9;
+	clear:both;
+}
+
+#display-window{
+	background-color:white;
+	position:fixed;
+	z-index:4;
+	border-radius:5px;
+	display: none;
+	transition: all 2s;
+}
+
+/* exists solely because a parent container with position:relative might be needed for the children */
+#display-window-inner-wrapper{
+	position:relative;
+	overflow:hidden;
+
+	width:100%;
+	height:100%;
+}
+
+#display-image-wrapper{
+	position:relative;
+	border-radius:2px;
+	height:93%;
+	width:auto;
+}
+
+#display-image-outer-wrapper{
+	position:relative;
+	margin:5px;
+	border-radius:2px;
+	border: 1px solid black;
+	height:98%;
+	width:auto;
+	background-color:black;
+}
+
+#loading-div{
+	width:200px;
+	margin:0 auto;
+	text-align:center;
+	position:relative;
+	top:37%;
+	z-index:10;
+}
+
+#image-core-wrapper{
+	position: relative;
+	display:none;
+}
+
+#flash-core-wrapper{
+	position: relative;
+	display:none;
+}
+
+#flash-play-button{
+	position:absolute;
+	width:100px;
+	height:100px;
+	text-align:center;
+	font-size:6em;
+	color:white;
+	z-index:9;
+	display:none;
+	cursor:pointer;
+}
+
+#shown-img{
+	width:100%;
+	height:100%;
+}
+
+#flash-wrapper{
+	display:none;
+	position:relative;
+}
+
+#display-overlay{
+	background-color: black;
+	opacity:0.8;
+	position:absolute;
+	width:100%;
+	height:100%;
+	z-index:5;
+}
+
+#flash-object{
+	width:100%;
+	height:100%;
+	background-color:white;
+	text-align:center;
+}
+
+/* Tried to make it stick to bottom of parent with bottom:0 -- no luck. Fine-tuned percentage dims instead. */
+#display-info-wrapper{
+	position:absolute;
+	height:110px;
+	width:100%;
+	left: -6px;
+	margin:5px;
+	border-radius:2px;
+	border: 1px solid black;
+	z-index:5;
+
+	background-color:white;
+	transition:bottom 0.2s;
+}
+
+/* nav nodes have a wrapper so that they can be positioned just right */
+/* does not interfere with center description div b/c of its width constraint */
+
+.right-side{
+	right:0px;
+}
+
+.left-side{
+	left:0px;
+}
+
+.bringup-node{
+	position:absolute;
+	width:30px;
+	height:30px;
+	top:-30px;
+	padding-top:3px;
+	left:48%;
+	margin:0 auto;
+	background-color:white;
+	border: 1px solid black;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	text-align:center;
+	transition:top 0.2s;
+	background: rgb(207, 239, 201);
+}
+
+.image-close-button{
+	position:absolute;
+	top:10px;
+	right:30px;
+	height:30px;
+	width:30px;
+	background-color:white;
+	text-align:center;
+	user-select:none;
+	cursor:pointer;
+	border-radius:5px;
+	border: 1px solid black;
+	z-index:6;
+}
+
+.link-node{
+	position:absolute;
+	cursor:pointer;
+
+	width:1.2em;
+	height:1.2em;
+	text-align:center;
+
+	left:10px;
+	top:10px;
+	color:black;
+	background-color:white;
+	font-size:3em;
+
+	padding:5px;
+
+	border-radius:3px;
+
+	opacity:0.5;
+
+	transition:opacity 0.2s;
+
+	z-index: 6;
+}
+
+.link-node a, .link-node a:visited{
+	color:black;
+	text-decoration:none;
+}
+
+.link-node:hover{
+	opacity:1.0;
+}
+
+.nav-node{
+	cursor:pointer;
+	position:absolute;
+	font-size:2em;
+
+	width:50px;
+	color:#8CAD86;
+
+	min-height:80px;
+	min-width:70px;
+	bottom:30px;
+	display: inline-block;
+
+	text-align:center;
+
+	z-index:8;
+
+	transition: font-size 0.3s, color 0.5s;
+}
+
+.nav-node-vulgar{
+	color:rgb(128,0,0);
+}
+
+
+#nav-node-left{
+	left:10px;
+	padding-left:20px;
+	text-align:left;
+}
+
+#nav-node-right{
+	right:25px;
+	padding-right:20px;
+	text-align:right;
+}
+
+/* below elements pertain to the image description and title shon in pop-up */
+
+#image-description-node{
+	position:relative;
+	width:68%;
+	height:100%;
+	margin:0 auto;
+	text-align:center;
+	background-color:white;
+}
+
+#image-title{
+	width:100%;
+	height:18px;
+	font-weight:bold;
+	background: rgb(207, 239, 201);
+	background: linear-gradient(to right, white, rgb(207, 239, 201),white); 
+}
+
+#image-description-text{
+	padding:0.5em;
+}
+
+
+
+/* Styling for the tiles */
+
+.vulgar-background{
+	background: linear-gradient(to right,rgb(128,0,0), red) !important;
+}
+
+.display-vulgar{
+	background-color: red;
+}
+
+.display-vulgar-left{
+	background: linear-gradient(to left, white , red);
+}
+
+.display-vulgar-right{
+	background: linear-gradient(to right, white , red);
+}
+
+.vulgar-overlay{
+	position:absolute;
+	opacity:0;
+	width:100%;
+	height:100%;
+	z-index: 7;
+	transition: opacity 0.5s;
+}
+
+.vulgar-overlay-right{
+	background: linear-gradient(to right, rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0), red);
+}
+
+.vulgar-overlay-left{
+	background: linear-gradient(to left, rgba(0, 0, 0, 0) , rgba(0, 0, 0, 0), red);
+}
+
+.collection-heading{
+	width:100%;
+	margin-top:2em;
+	background-color:rgb(207, 239, 201);
+	padding-left:1em;
+}
+
+.image-node{
+	
+	display: inline-block;
+	position:relative;
+	vertical-align:top;
+	
+	margin:2px;
+
+	width:170px;
+	height:170px;
+	
+	background: linear-gradient(to right,#bfbfbf,#f4f4f4); 
+	border: 1px solid black;
+	border-radius: 4px;
+	
+	cursor:pointer;
+
+}
+
+.hidden{
+	display:none;
+}
+
+.single-node .tile-wrapper{
+	transition: transform 0.2s ease;
+}
+
+.tile-wrapper{
+	position:relative;
+	width:90%;
+	height:90%;
+	margin:5%;
+	
+}
+
+.tile-img{
+	display:block;
+	width:100%;
+	height:100%;
+	border-radius: 2px;
+}
+
+.inner-tile{
+	width:80%;
+	height:80%;
+	position:absolute;
+	top:5px;
+	left:5px;
+	background-color:#fafcd4;
+	border: 1px solid black;
+	border-radius: 2px;
+
+	transition:top 0.2s, left 0.2s;
+}
+
+.first-tile{
+	z-index:1;
+	top:5%;
+	left:5%;
+
+}
+
+.center-tile{
+	z-index:1;
+	left:10%;
+	top:10%;
+}
+
+.last-tile{
+	z-index:1;
+	top:15%;
+	left:15%;
+}
+
+.flash-node{
+	transition: background-color 0.5s;
+}
+
+.flash-label{
+	position:absolute;
+	right:2%;
+	bottom:2%;
+	height:30%;
+	width:30%;
+
+	text-align:center;
+
+	transition: height 0.3s, width 0.3s;
+}
+
+.flash-logo{
+	height:100%;
+	width:100%;
+}
+
+/* debugging crap */
+
+.filler{
+	
+	height:1000px;
+	width:100%;
+}
+
+#test-outer{
+	background-color:red;
+	width:400px;
+	height:400px;
+}
+
+#test-inner{
+	background-color:green;
+	width:600px;
+	height:200px;
+}
+
+#test-image{
+	width:100%;
+	height:100%;
+}

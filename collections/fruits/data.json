@@ -1,0 +1,31 @@
+[
+	{
+		"title":"The next one is 'vulgar'",
+		"description":"The next image has a 'vulgar' filter attached to it, so the navigation arrows leading up to it have 'red' effects on them.",
+		"file-name":"berries.jpg"
+	},{
+		"title":"This one is 'vulgar'",
+		"description":"Note that the background of the frame, as well as that of the tile, is also red.",
+		"file-name":"apples.jpg",
+		"vulgar":"true"
+	},{
+		"title":"Grapes 1",
+		"description":"This one's the first image of a sequence. Every image that's part of a sequence has the same 'sequence-name' tag attached to it in the JSON data.",
+		"file-name":"grapes1.jpg",
+		"sequence-name":"grape-sequence"
+	},{
+		"title":"Grapes 2",
+		"description":"Note that only the tile associated with the first image in the sequence gets displayed on the page.",
+		"file-name":"grapes2.jpg",
+		"sequence-name":"grape-sequence"
+	},{
+		"title":"Grapes 3",
+		"description":"This is the last image of a sequence. The thing about sequences is, if you attempt to stumble backwards onto its last image, the gallery will instead have you start all over from the first one. Click 'next' and then 'back', and see where that takes you.",
+		"file-name":"grapes3.jpg",
+		"sequence-name":"grape-sequence"
+	},{
+		"title":"The button at the top-left will open a new tab showing the image.",
+		"description":"Juicy and ripe, these ones",
+		"file-name":"oranges.jpg"
+	}
+]

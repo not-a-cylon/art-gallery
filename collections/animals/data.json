@@ -1,0 +1,22 @@
+[
+	{
+		"title":"The 'information' popup",
+		"description":"The little 'i' popup at the bottom only appears if the image data has a 'description' property. If it's ommitted, like in the next image, the 'i' is automatically hidden.",
+		"file-name":"platypus.jpg"
+	},{
+		"title":"No description on this one",
+		"file-name":"horse.jpg"
+	},{
+		"title":"This gallery plays flash files, too.",
+		"description":"The script automatically detects the .swf extension and dispalys it as a flash file. It's recommended that flash files have 'width' and 'height' properties explicitly defined in the image data, otherwise they'll be uglily (that's a word) resized. Also, make sure that the tile has a '.jpg' extension. (flash animation courtesy of http://www.free-flash-animations.com)",
+		"width":"500px",
+		"height":"100px",
+		"file-name":"chicken animation.swf",
+		"tall":"true"
+	},{
+		"title":"A 'tall' image",
+		"description":"This image has a 'tall':'true' property, so that while its width is resized to fit the window, its height (scaled accordingly) spills over and causes the scrollbar to appear. This is really good for tall images like comic pages or text blocks, where there are lots of small details.",
+		"file-name":"chicken.jpg",
+		"tall":"true"
+	}
+]

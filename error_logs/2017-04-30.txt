@@ -1,0 +1,2 @@
+[fruits : Grapes 2 ] -- main tile location not valid. Full path: C:\xampp\htdocs\production\art-gallery//collections/fruits/tiles/tile grapes2.jpg. Setting src to default http://www.sslukin.net/projects/art-gallery/images/default_tile.png
+[fruits : Grapes 3 ] -- main tile location not valid. Full path: C:\xampp\htdocs\production\art-gallery//collections/fruits/tiles/tile grapes3.jpg. Setting src to default http://www.sslukin.net/projects/art-gallery/images/default_tile.png
